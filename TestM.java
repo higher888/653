@@ -8,7 +8,7 @@ import java.io.ByteArrayOutputStream;
 public class TestM {
 
     	/* add your test code here */
-	public static void main(String [] argv){
+	
 		private M model;
 		private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		@Before public void runBeforeEachTest(){
@@ -22,40 +22,38 @@ public class TestM {
 		@Test public void testm_node1(){
 			String s_empty = new String("");
 			model.m(s_empty,0);
-			assertEquals("zero",outContent.toString());
+			assertEquals("zero\n",outContent.toString());
 		}
 		@Test public void testm_node2(){
 			String s_1 = new String("a");
 			model.m(s_1,0);
-			assertEquals("a",outContent.toString());
+			assertEquals("a\n",outContent.toString());
 		}
 		@Test public void testm_node3(){
 			String s_2 = new String("aa");
 			model.m(s_2,0);
-			assertEquals("b",outContent.toString());	
+			assertEquals("b\n",outContent.toString());	
 		}
 		@Test public void testm_edge1(){
 			String s_3 = new String("");
 			model.m(s_3,0);
-			assertEquals("zero",outContent.toString());
+			assertEquals("zero\n",outContent.toString());
 		}
 		@Test public void testm_edge2(){
 			String s_4 = new String("a");
 			model.m(s_4,1);
-			assertEquals("a",outContent.toString());
+			assertEquals("a\n",outContent.toString());
 		}
 		@Test public void testm_edge3(){
 			String s_6 = new String("aa");
 			model.m(s_6,1);
-			assertEquals("b",outContent.toString());
+			assertEquals("b\n",outContent.toString());
 		}
 		@Test public void testm_edge4(){
 			String s_6 = new String("aaa");
 			model.m(s_6,1);
-			assertEquals("b",outContent.toString());
-		}
-	}
-				
+			assertEquals("b\n",outContent.toString());
+		}				
     	
 }
 
